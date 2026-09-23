@@ -186,43 +186,34 @@ export default function Hero() {
                   row - and every photo in it - collapsed to 0. */}
               <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:flex lg:h-70 lg:gap-3">
                 {/* ── Lead photo ──
-                    Existing practice photography, per handoff A2: "reuse
-                    existing practice photography for consistency with the
-                    model page".
+                    The aligner close-up the handoff asks for as the first
+                    frame: a plain clear tray held up in the practice, no
+                    brand mark anywhere in shot.
 
-                    [ASSET] The handoff's ideal first frame is an aligner
-                    close-up, which the practice has not supplied. Do NOT
-                    point `src` at a not-yet-existing file to hold its place:
-                    ImageSlot only renders its designed placeholder when `src`
-                    is undefined, so a src to a missing file makes next/image
-                    request it and return 400. When the aligner photo arrives,
-                    drop it in public/images/lp/ and swap `file`/`src`/`alt`
-                    here - nothing else changes.
-
-                    `priority` stays: whatever occupies this slot is the LCP
-                    element on mobile (handoff B6). */}
+                    `priority` stays: this slot is the LCP element on mobile
+                    (handoff B6). */}
                 <ImageSlot
-                  label="Hero - welcoming the patient"
-                  file="lp/hero-new-patients.webp"
-                  src="/images/lp/hero-new-patients.webp"
-                  dimensions="2400 × 1400"
-                  alt="A smiling patient being welcomed at Hampton Family Dental in Southampton, PA"
+                  label="Hero - the aligner"
+                  file="lp/clearcorrect-aligner-hero.webp"
+                  src="/images/lp/clearcorrect-aligner-hero.webp"
+                  dimensions="1536 × 864"
+                  alt="A clear ClearCorrect aligner tray held up in a treatment room at Hampton Family Dental in Southampton, PA"
                   tone="light"
                   priority
                   className="col-span-2 aspect-21/9 w-full rounded-xl ring-1 ring-navy/8 sm:rounded-2xl lg:aspect-auto lg:h-full lg:w-[56%]"
                   sizes="(max-width: 1024px) 100vw, 30vw"
-                  objectPosition="center 40%"
+                  objectPosition="center 45%"
                 />
 
                 <div className="col-span-2 grid grid-cols-2 gap-2 sm:gap-3 lg:flex lg:h-full lg:w-[44%] lg:flex-col lg:gap-3">
-                  {/* The families this treats - the second of the three
-                      frames the handoff asks for. */}
+                  {/* Who this treats - the second of the three frames the
+                      handoff asks for. */}
                   <ImageSlot
-                    label="Patients at the practice"
-                    file="lp/family-patients.webp"
-                    src="/images/lp/family-patients.webp"
-                    dimensions="1400 × 1000"
-                    alt="Smiling patients at Hampton Family Dental in Southampton, PA"
+                    label="Patient in the chair"
+                    file="lp/clearcorrect-patient-smile.webp"
+                    src="/images/lp/clearcorrect-patient-smile.webp"
+                    dimensions="1365 × 1024"
+                    alt="A relaxed patient smiling in the chair at Hampton Family Dental in Southampton, PA"
                     tone="light"
                     className="aspect-4/3 w-full rounded-xl ring-1 ring-navy/8 sm:rounded-2xl lg:aspect-auto lg:h-full lg:flex-1"
                     // Half the column below lg; a slim strip beside the lead
@@ -233,10 +224,10 @@ export default function Hero() {
 
                   <ImageSlot
                     label="Treatment room"
-                    file="lp/treatment-room.webp"
-                    src="/images/lp/treatment-room.webp"
-                    dimensions="1400 × 1000"
-                    alt="A clean, modern treatment room at Hampton Family Dental in Southampton, PA"
+                    file="lp/clearcorrect-scan-room.webp"
+                    src="/images/lp/clearcorrect-scan-room.webp"
+                    dimensions="1365 × 1024"
+                    alt="A treatment room at Hampton Family Dental in Southampton, PA, with a scanner and a wall-mounted screen"
                     tone="light"
                     className="aspect-4/3 w-full rounded-xl ring-1 ring-navy/8 sm:rounded-2xl lg:aspect-auto lg:h-full lg:flex-1"
                     sizes="(max-width: 1024px) 50vw, 22vw"

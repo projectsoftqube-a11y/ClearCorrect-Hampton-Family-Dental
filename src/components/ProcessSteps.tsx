@@ -23,41 +23,25 @@ import { STEPS } from "@/lib/content";
  * read as unrelated tiles when they are in fact one process.
  */
 /**
- * The section is placed twice in the page, and each copy renders on exactly one
- * breakpoint - see src/app/page.tsx.
+ * One copy, rendered at every width.
  *
- *  · "mobile"  - directly under the hero, where the client wants the reassurance
- *                to land before anything else on a phone. Step bodies are
- *                dropped so it stays a scannable four-line summary rather than
- *                a wall of text at the top of the page; the photos stay.
- *  · "desktop" - its original position and full treatment, untouched.
- *
- * Only one is ever in the layout at a given width, so `id="first-visit"` and
- * the images are never duplicated in the rendered output.
+ * This used to take a `variant` prop and ship two copies - an abbreviated
+ * "mobile" one under the hero and this "desktop" one in place - each gated to
+ * a single breakpoint. Only the desktop copy was ever mounted in
+ * src/app/page.tsx, and its `hidden lg:block` meant the whole section
+ * disappeared below 1024px. The gating is gone: the section now renders in its
+ * place in the page order on phones as well, with the full step bodies.
  */
-export default function ProcessSteps({
-  variant = "desktop",
-}: {
-  variant?: "mobile" | "desktop";
-}) {
-  const mobile = variant === "mobile";
-
+export default function ProcessSteps() {
   return (
-    <Section
-      id="first-visit"
-      className={mobile ? "bg-white lg:hidden" : "hidden bg-white lg:block"}
-    >
+    <Section id="first-visit" className="bg-white">
       <div className="grid gap-9 lg:grid-cols-[1.02fr_0.98fr] lg:items-start lg:gap-14">
         {/* ── Left: the sequence ── */}
         <div className="min-w-0">
           <SectionHeading
             eyebrow="How it works"
             title="How ClearCorrect works"
-            lead={
-              mobile
-                ? "From first scan to final smile."
-                : "From your first scan to your final smile - here is exactly how treatment goes, and where the cost is agreed."
-            }
+            lead="From your first scan to your final smile - here is exactly how treatment goes, and where the cost is agreed."
           />
 
           {/* One card per step, nothing outside them.
@@ -115,13 +99,9 @@ export default function ProcessSteps({
                       </span>
                     </div>
 
-                    {/* Dropped in the mobile copy, where this section runs
-                        directly under the hero and has to stay scannable. */}
-                    {!mobile && (
-                      <p className="mt-1.5 text-[14.5px] leading-relaxed text-navy/60">
-                        {step.body}
-                      </p>
-                    )}
+                    <p className="mt-1.5 text-[14.5px] leading-relaxed text-navy/60">
+                      {step.body}
+                    </p>
                   </div>
                 </div>
               </Reveal>
@@ -144,11 +124,11 @@ export default function ProcessSteps({
             read; on smaller screens it simply follows the list. */}
         <Reveal delay={0.1} className="min-w-0 lg:sticky lg:top-24 lg:self-start">
           <ImageSlot
-            label="Consultation - discussing the treatment plan"
-            file="lp/first-visit-consult.webp"
-            src="/images/lp/first-visit-consult.webp"
-            dimensions="1200 × 1400"
-            alt="A dentist talking calmly with a patient about their treatment plan at Hampton Family Dental in Southampton, PA"
+            label="Wearing the aligner"
+            file="lp/clearcorrect-tray-insert.webp"
+            src="/images/lp/clearcorrect-tray-insert.webp"
+            dimensions="878 × 1024"
+            alt="A patient placing a clear ClearCorrect aligner tray onto her upper teeth"
             // Half the height it used to be below lg (was 5/4, then 4/3): on a
             // phone this portrait ate most of a screen for one supporting
             // photo. The lg sticky column keeps the taller 7/6 crop, where the
@@ -159,45 +139,45 @@ export default function ProcessSteps({
             // wider than ~620px, so it downloaded roughly six times the bytes
             // it needed and left the box empty for that much longer.
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 92vw, 620px"
-            // 38% rather than 28%: the letterbox crop below lg is a much
-            // narrower slice of the same portrait, and at 28% it cut the
-            // faces off at the chin.
-            objectPosition="center 38%"
+            // The letterbox crop below lg is a much narrower slice of the same
+            // portrait, so this is set to the mouth and the hand holding the
+            // tray - the only part of the frame worth keeping at 5:2.
+            objectPosition="center 32%"
           />
 
-          {/* The two rooms the steps above actually describe - the waiting area
-              you arrive in, and the room you're scanned and reviewed in. Both
-              deliberately empty: a spotless unoccupied room reads as calm and
-              clinical, which is the exact contrast this page wants to draw
-              against a kit that arrives in the post. */}
+          {/* What the steps above actually produce - the set of trays your
+              scan is turned into, and one of them held up in the room you were
+              scanned in. The captions carry the argument the whole section is
+              making: these are made for your teeth and handed to you here,
+              not chosen off a shelf and posted out. */}
           <div className="mt-3.5 grid grid-cols-2 gap-3.5">
             <figure className="min-w-0">
               <ImageSlot
-                label="Reception and waiting area"
-                file="lp/reception-area.webp"
-                src="/images/lp/reception-area.webp"
-                dimensions="1400 × 1000"
-                alt="The skylit waiting room at Hampton Family Dental in Southampton, PA, with cushioned seating and the reception window"
+                label="A set of clear aligner trays"
+                file="lp/clearcorrect-aligner-trays.webp"
+                src="/images/lp/clearcorrect-aligner-trays.webp"
+                dimensions="1434 × 1024"
+                alt="A pair of clear ClearCorrect aligner trays, moulded to the upper and lower teeth"
                 className="aspect-[7/5] w-full rounded-2xl ring-1 ring-beige-dark/50"
                 sizes="(max-width: 1024px) 50vw, 23vw"
               />
               <figcaption className="mt-2 text-[11.5px] font-medium text-navy/50">
-                Where you wait
+                Made for your teeth
               </figcaption>
             </figure>
 
             <figure className="min-w-0">
               <ImageSlot
-                label="Modern treatment room"
-                file="lp/treatment-room.webp"
-                src="/images/lp/treatment-room.webp"
-                dimensions="1400 × 1000"
-                alt="A treatment room at Hampton Family Dental in Southampton, PA, with a dental chair and a wall-mounted screen"
+                label="Aligner in the treatment room"
+                file="lp/clearcorrect-aligner-practice.webp"
+                src="/images/lp/clearcorrect-aligner-practice.webp"
+                dimensions="1434 × 1024"
+                alt="A clear aligner tray held up in a treatment room at Hampton Family Dental in Southampton, PA"
                 className="aspect-[7/5] w-full rounded-2xl ring-1 ring-beige-dark/50"
                 sizes="(max-width: 1024px) 50vw, 23vw"
               />
               <figcaption className="mt-2 text-[11.5px] font-medium text-navy/50">
-                Where you&apos;re seen
+                Fitted here, in person
               </figcaption>
             </figure>
           </div>

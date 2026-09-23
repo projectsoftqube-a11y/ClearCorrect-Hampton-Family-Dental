@@ -14,8 +14,6 @@ import { SHOW_IMAGE_SLOT_LABELS } from "@/lib/lp.config";
  *
  * The moment a real file lands in /public/images/lp/, pass `src` and this
  * becomes a fully optimised next/image with no other change to the call site.
- *
- * Prompts for generating every one of these live in IMAGE-PROMPTS.md.
  */
 export type ImageSlotProps = {
   /** Human description shown on the placeholder, e.g. "Hero - practice exterior". */

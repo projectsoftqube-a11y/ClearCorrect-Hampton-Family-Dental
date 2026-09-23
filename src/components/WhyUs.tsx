@@ -27,17 +27,22 @@ export default function WhyUs() {
       <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
         <Reveal className="min-w-0 lg:order-2">
           <ImageSlot
-            label="Family of patients in the practice"
-            file="lp/family-patients.webp"
-            src="/images/lp/family-patients.webp"
-            dimensions="1400 × 1100"
-            alt="A family of three generations smiling together at Hampton Family Dental in Southampton, PA"
+            label="Digital scan taken by the dentist"
+            file="lp/clearcorrect-scanner.webp"
+            src="/images/lp/clearcorrect-scanner.webp"
+            dimensions="1365 × 1024"
+            // This image carries the section's whole argument - fitted by a
+            // dentist in the chair, not ordered by post - so the hands doing
+            // the work are the subject.
+            alt="A dentist taking a digital scan of a patient's teeth with an intraoral scanner at Hampton Family Dental in Southampton, PA"
             // Flatter on a phone (16:9) than on lg+ (5:4) - the square-ish
             // crop was costing a lot of height above the stats before a word
             // of copy had been read.
             className="aspect-video w-full rounded-2xl ring-1 ring-beige-dark/50 sm:rounded-3xl lg:aspect-5/4"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            objectPosition="center 35%"
+            // The 16:9 phone crop is a band through the middle of the frame;
+            // 45% puts the scanner tip and the patient's mouth inside it.
+            objectPosition="center 45%"
           />
         </Reveal>
 
