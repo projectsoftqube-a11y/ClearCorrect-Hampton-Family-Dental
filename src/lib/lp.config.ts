@@ -38,6 +38,10 @@ export const BOOKING_URL = "";
  *    all state $6,500 -> $5,000 / save $1,500 identically. Do not round,
  *    reword, or vary it."
  *
+ * The client's "Clear Correct edits" (Sep 2026) amended the figures to
+ * $6,500 -> $5,500 / save $1,000. The rule still stands - the ads must be
+ * updated to match.
+ *
  * Every price on the page reads from this object for exactly that reason - a
  * hardcoded "$5,000" in one component is how the page and the ad drift apart,
  * and a price mismatch between an ad and its landing page is a Google Ads
@@ -49,19 +53,19 @@ export const BOOKING_URL = "";
 export const OFFER = {
   product: "ClearCorrect clear aligners",
   /** The all-in treatment price. */
-  price: "$5,000",
+  price: "$5,500",
   /** Struck through wherever both are shown together. */
   wasPrice: "$6,500",
   /** Always rendered as its own emphasis - it is the reason to act. */
-  savings: "Save $1,500",
+  savings: "Save $1,000",
   /** Lowercase mid-sentence variant of the above. */
-  savingsInline: "save $1,500",
+  savingsInline: "save $1,000",
   /**
    * The amount alone, for constructions where "save" is already carried by
-   * the surrounding sentence - "that's $1,500 off the regular price". Using
-   * savingsInline there produces "that's save $1,500 off".
+   * the surrounding sentence - "that's $1,000 off the regular price". Using
+   * savingsInline there produces "that's save $1,000 off".
    */
-  savingsAmount: "$1,500",
+  savingsAmount: "$1,000",
   /** The ask. Free is the whole reason this converts at a $5k price point. */
   firstStep: "free consultation",
   /*

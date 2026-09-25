@@ -27,8 +27,8 @@ import type { AccordionItem } from "@/components/Accordion";
 export const STEPS = [
   {
     duration: "Step 1",
-    title: "Free consultation & scan",
-    body: "We assess your smile and take a digital scan - no cost, no obligation.",
+    title: "Exam and X-rays",
+    body: "We will take a look at your smile through some X-rays.",
   },
   {
     duration: "Step 2",
@@ -335,11 +335,11 @@ export const FAQS: AccordionItem[] = [
   },
   {
     q: "How long does treatment take?",
-    a: "It varies by case; you'll get a personalized timeline at your free consultation.",
+    a: "It varies by case; you'll get a personalized timeline at your consultation.",
   },
   {
     q: "What's the first step?",
-    a: "A free consultation and digital scan - no cost, no obligation.",
+    a: "A consultation and digital scan.",
   },
 ];
 
