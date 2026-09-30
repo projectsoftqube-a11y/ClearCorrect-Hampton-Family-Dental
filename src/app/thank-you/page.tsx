@@ -16,9 +16,9 @@ import ThankYou from "@/components/ThankYou";
  * inflates the count and wastes ad spend.
  */
 export const metadata: Metadata = {
-  title: "Thank you - your consultation request is in | Hampton Family Dental",
+  title: "Thank you - your exam request is in | Hampton Family Dental",
   description:
-    "Thanks for getting in touch. Someone from Hampton Family Dental will call you shortly to book your free ClearCorrect consultation.",
+    "Thanks for getting in touch. Someone from Hampton Family Dental will call you shortly to book your ClearCorrect exam.",
   robots: { index: false, follow: false },
 };
 

@@ -82,7 +82,7 @@ export default function StickyCallBar() {
         className="flex flex-1 items-center justify-center gap-1.5 bg-urgent px-2 py-4 text-[clamp(12px,3.6vw,14px)] font-bold text-white active:bg-urgent-dark"
       >
         <CalendarDays className="h-4 w-4 shrink-0" strokeWidth={2.6} aria-hidden />
-        <span className="whitespace-nowrap">Free Consultation</span>
+        <span className="whitespace-nowrap">Book Your Exam Now</span>
       </button>
     </div>
   );

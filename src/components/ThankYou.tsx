@@ -41,7 +41,7 @@ const WHAT_HAPPENS = [
     body: "Evenings and early mornings are often available - just ask.",
   },
   {
-    title: "Your free consultation",
+    title: "Your exam",
     body: "A smile assessment, a digital scan, and a clear quote - no obligation.",
   },
 ];
@@ -92,7 +92,7 @@ export default function ThankYou() {
           className="mt-4 font-heading leading-[1.1] tracking-[-0.025em] text-navy sm:mt-3 lg:mt-4"
           style={{ fontSize: "clamp(1.5rem, 4.2vw, 2.4rem)" }}
         >
-          Thank you - your consultation request is in.
+          Thank you - your exam request is in.
         </motion.h1>
 
         <motion.p

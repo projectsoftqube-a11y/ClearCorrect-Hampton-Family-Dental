@@ -61,10 +61,10 @@ function formatPhone(value: string): string {
 }
 
 /**
- * The consultation form - the conversion this page exists to produce.
+ * The exam request form - the conversion this page exists to produce.
  *
- * Kept minimal on purpose even at four fields: the ask is a *free* assessment,
- * so the form should feel proportionate to that and not to the $5,000 the
+ * Kept minimal on purpose even at four fields: the ask is an exam, so the form
+ * should feel proportionate to that and not to the $5,500 the
  * treatment costs. Everything that justifies the price lives in the sections
  * around it, not in the form.
  */
@@ -137,8 +137,8 @@ export default function LeadForm({
 
     const err = await sendEnquiry({
       formType: source
-        ? `ClearCorrect LP - Free Consultation Request (${source})`
-        : "ClearCorrect LP - Free Consultation Request",
+        ? `ClearCorrect LP - Exam Request (${source})`
+        : "ClearCorrect LP - Exam Request",
       name: values.name.trim(),
       phone: values.phone.trim(),
       email: values.email.trim(),
@@ -219,7 +219,7 @@ export default function LeadForm({
       ) : (
         <div className="mb-4">
           <h3 className="font-heading text-[1.25rem] leading-tight text-navy sm:text-[1.4rem]">
-            Book your free ClearCorrect consultation
+            Book your exam now
           </h3>
           <p className="mt-1.5 text-[13px] leading-snug text-navy/55">
             Prefer to talk? Call us -{" "}
@@ -342,7 +342,7 @@ export default function LeadForm({
             </>
           ) : (
             <>
-              Request My Free Consultation
+              Book Your Exam Now
               <ArrowRight
                 className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5"
                 strokeWidth={2.6} aria-hidden />

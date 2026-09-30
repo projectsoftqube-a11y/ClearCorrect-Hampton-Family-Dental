@@ -36,7 +36,7 @@ import {
  */
 export const metadata: Metadata = {
   title: `ClearCorrect Clear Aligners in ${PRACTICE.city}, ${PRACTICE.state} | ${OFFER.price} (${OFFER.savings})`,
-  description: `ClearCorrect clear aligners in ${PRACTICE.city}, ${PRACTICE.state} - now ${OFFER.price} (${OFFER.savingsInline}). Nearly invisible, removable, fitted by your dentist. Book a free consultation.`,
+  description: `ClearCorrect clear aligners in ${PRACTICE.city}, ${PRACTICE.state} - now ${OFFER.price} (${OFFER.savingsInline}). Nearly invisible, removable, fitted by your dentist. Book your exam now.`,
   alternates: { canonical: absoluteUrl("/") },
   // A paid-traffic landing page should not compete in organic search with the
   // main site's own orthodontics page. It stays crawlable so quality signals
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     type: "website",
     url: absoluteUrl("/"),
     title: `ClearCorrect Clear Aligners - ${PRACTICE.city}, ${PRACTICE.state}`,
-    description: `Straighten your smile discreetly. Now ${OFFER.price} (${OFFER.savingsInline}). Free consultation with your ${PRACTICE.city} dentist.`,
+    description: `Straighten your smile discreetly. Now ${OFFER.price} (${OFFER.savingsInline}). Book your exam with your ${PRACTICE.city} dentist.`,
     images: [
       {
         // [DEV - ASSET NEEDED] Reusing the New Patients OG image until a
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `ClearCorrect Clear Aligners - ${PRACTICE.city}, ${PRACTICE.state}`,
-    description: `Straighten your smile discreetly. Now ${OFFER.price} (${OFFER.savingsInline}). Free consultation with your ${PRACTICE.city} dentist.`,
+    description: `Straighten your smile discreetly. Now ${OFFER.price} (${OFFER.savingsInline}). Book your exam with your ${PRACTICE.city} dentist.`,
     images: [absoluteUrl("/images/lp/og-newpatients.jpg")],
   },
 };
@@ -255,7 +255,7 @@ export default function ClearCorrectLandingPage() {
         </main>
 
         {/* Mobile only. Hidden until the hero scrolls away, then offers Call
-            and Free Consultation. */}
+            and Book Your Exam Now. */}
         <StickyCallBar />
 
         {/* Fixed at every width - lifted clear of StickyCallBar on mobile,

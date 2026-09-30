@@ -54,7 +54,7 @@ export default function OfferBand() {
               letterSpacing: "-0.03em",
             }}
           >
-            Book your free smile assessment
+            Book your exam now
           </h2>
 
           {/* ── The price card ──
@@ -93,11 +93,11 @@ export default function OfferBand() {
 
           <p className="mx-auto mt-5 max-w-xl text-[14px] leading-relaxed text-white/75 sm:text-[15.5px]">
             Straighten your smile discreetly with {OFFER.product}. It starts
-            with a{" "}
+            with an{" "}
             <strong className="font-semibold text-white">
               {OFFER.firstStep}
             </strong>
-            : no cost, no obligation.
+            .
           </p>
 
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -108,7 +108,7 @@ export default function OfferBand() {
               className="inline-flex w-full max-w-xs items-center justify-center gap-2 rounded-2xl bg-urgent px-4 py-3.5 text-[clamp(12.5px,3.4vw,15px)] font-bold text-white shadow-[0_14px_36px_-8px_rgba(30,96,118,0.8)] transition-all hover:bg-urgent-dark active:scale-[0.99] sm:w-auto sm:px-5 sm:text-[16px]"
             >
               <CalendarDays className="h-4 w-4 shrink-0" strokeWidth={2.6} aria-hidden />
-              <span className="whitespace-nowrap">Book My Free Consultation</span>
+              <span className="whitespace-nowrap">Book Your Exam Now</span>
             </button>
 
             {/* Outlined rather than filled: the form is the primary

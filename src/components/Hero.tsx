@@ -8,16 +8,15 @@ import { trackCallClick } from "@/lib/gtm";
 import { OFFER, PHONE_DISPLAY, PHONE_TEL } from "@/lib/lp.config";
 
 /**
- * What the free consultation includes - handoff A4.
+ * What the first visit includes - handoff A4.
  *
- * Note what these describe: the *consultation*, not the treatment. The thing
- * the form beside this list requests is free, and the list has to make that
- * unmistakable or the $5,000 in the headline reads as the cost of the next
- * click. The price appears once, in the third line, framed as something you
+ * Note what these describe: the *exam*, not the treatment. The list has to
+ * make that unmistakable or the price in the headline reads as the cost of the
+ * next click. The price appears once, in the third line, framed as something you
  * are told rather than something you owe.
  */
 const INCLUDED = [
-  "A free smile assessment with your dentist",
+  "A smile assessment with your dentist",
   "A digital scan to preview your ClearCorrect result",
   `A clear, upfront quote - ${OFFER.price} (${OFFER.savingsInline})`,
   "No pressure, no obligation",
@@ -25,13 +24,13 @@ const INCLUDED = [
 
 /**
  * Offer-led hero: the product headline, the price, a three-photograph collage,
- * what the free consultation includes, and the request form beside it.
+ * what the first visit includes, and the request form beside it.
  *
  * Structurally identical to the New Patients hero on purpose - the handoff
  * asks for the same components and spacing so the two landing pages read as
  * one family. What differs is the argument. That page leads with an offer you
  * accept on the spot; this one leads with a product, prices it, and then makes
- * the *next step* free, because nobody commits $5,000 from a hero.
+ * the *next step* an exam, because nobody commits $5,500 from a hero.
  *
  * Two CTAs here where the sister page has none: at this price point a real
  * share of traffic wants to ask a question first, and burying the phone number
@@ -105,7 +104,7 @@ export default function Hero() {
                 {OFFER.wasPrice}
               </span>
               . <strong className="font-bold text-navy">{OFFER.savings}</strong>{" "}
-              and start with a{" "}
+              and start with an{" "}
               <strong className="font-bold text-navy">{OFFER.firstStep}</strong>.
             </motion.p>
 
@@ -143,7 +142,7 @@ export default function Hero() {
                 data-cta="hero-book"
                 className="group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-urgent px-4 py-3.5 text-[14.5px] font-bold text-white shadow-[0_14px_36px_-8px_rgba(30,96,118,0.55)] transition-all hover:bg-urgent-dark active:scale-[0.99] sm:w-auto sm:px-5 sm:text-[16px]"
               >
-                Book My Free Consultation
+                Book Your Exam Now
                 <ArrowRight
                   className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5"
                   strokeWidth={2.6}

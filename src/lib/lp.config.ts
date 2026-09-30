@@ -66,8 +66,12 @@ export const OFFER = {
    * savingsInline there produces "that's save $1,000 off".
    */
   savingsAmount: "$1,000",
-  /** The ask. Free is the whole reason this converts at a $5k price point. */
-  firstStep: "free consultation",
+  /**
+   * The first step, bolded mid-sentence after "start with an" - so it must
+   * begin with a vowel sound, or change the article at both call sites
+   * (Hero, OfferBand).
+   */
+  firstStep: "exam and X-rays",
   /*
    * The handoff carried `financingFrom: "$[X]/mo"` here, rendered on the
    * affordability card. Removed rather than left as a visible token - a page

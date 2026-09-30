@@ -56,11 +56,11 @@ export default function LpFooter({ year }: { year: number }) {
             letterSpacing: "-0.025em",
           }}
         >
-          A straighter smile starts with a free consultation.
+          A straighter smile starts with an exam.
         </h2>
 
         {/* max-w-xl, not max-w-md. At max-w-md each of the two columns was
-            ~218px wide, and "Book My Free Consultation" needs ~205px of text
+            ~218px wide, and the booking label ("Book My Free Consultation" at the time) needed ~205px of text
             plus an icon - so it wrapped to two lines. Widening the pair gives
             both labels a single line at every width from 320px up. */}
         <div className="mt-6 grid gap-2.5 sm:mx-auto sm:max-w-xl sm:grid-cols-2 sm:gap-3">
@@ -83,7 +83,7 @@ export default function LpFooter({ year }: { year: number }) {
             className="flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl border border-white/25 bg-white/10 px-3 py-3.5 text-[14px] font-bold text-white backdrop-blur-md transition-colors hover:bg-white/18 sm:px-4 sm:text-[15px]"
           >
             <CalendarDays className="h-4 w-4 shrink-0" strokeWidth={2.4} aria-hidden />
-            Book My Free Consultation
+            Book Your Exam Now
           </button>
         </div>
 

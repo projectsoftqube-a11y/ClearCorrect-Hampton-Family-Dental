@@ -144,7 +144,7 @@ export default function BookingModal({
                   id="booking-modal-title"
                   className="font-heading text-[1.35rem] leading-tight text-navy sm:text-[1.5rem]"
                 >
-                  Book your free consultation
+                  Book your exam now
                 </h2>
                 <p className="mt-1 text-[13px] leading-snug text-navy/55">
                   Leave your details and we&apos;ll call you back to find a time.
